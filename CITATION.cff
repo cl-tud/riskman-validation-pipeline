@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Riskman Validation Pipeline
+message: >-
+  A prototypical implementation of the Riskman approach to
+  validation of risk management files.
+type: software
+authors:
+  - {}
+  - name: International Center for Computational Logic
+    address: TU Dresden
+    website: >-
+      https://iccl.inf.tu-dresden.de/web/International_Center_for_Computational_Logic/en
