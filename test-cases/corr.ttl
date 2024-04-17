@@ -37,7 +37,7 @@
 @prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://aaexample.org#> .
+@prefix ex: <http://example.org#> .
 @prefix rlevel: <https://w3id.org/riskman/risk-level#> .
 
 
@@ -70,7 +70,7 @@ ex:analyzedRisk1 a riskman:AnalyzedRisk ;
     riskman:hasHarm ex:harm1 ;
     riskman:hasHazardousSituation ex:hazardousSituation1 ;
     riskman:hasInitialRiskLevel ex:initialRiskLevel1 ;
-    riskman:hasName "Solvent removal risk of brain damage" .
+    rdfs:label "Solvent removal risk of brain damage" .
 
 ex:analyzedRisk2 a riskman:AnalyzedRisk ;
     riskman:hasDeviceContext ex:deviceContext2 ;
@@ -78,7 +78,7 @@ ex:analyzedRisk2 a riskman:AnalyzedRisk ;
     riskman:hasHarm ex:harm2 ;
     riskman:hasHazardousSituation ex:hazardousSituation2 ;
     riskman:hasInitialRiskLevel ex:initialRiskLevel2 ;
-    riskman:hasName "Electrode cable risk of serious burns" .
+    rdfs:label "Electrode cable risk of serious burns" .
 
 ex:analyzedRisk99 a riskman:AnalyzedRisk ;
     riskman:hasDeviceContext ex:deviceContext99 ;
@@ -86,125 +86,125 @@ ex:analyzedRisk99 a riskman:AnalyzedRisk ;
     riskman:hasHarm ex:harm99 ;
     riskman:hasHazardousSituation ex:hazardousSituation99 ;
     riskman:hasInitialRiskLevel ex:initialRiskLevel99 ;
-    riskman:hasName "Risk of death due to defibrillator battery running out" .
+    rdfs:label "Risk of death due to defibrillator battery running out" .
 
 ex:deviceComponent1 a riskman:DeviceComponent ;
-    riskman:hasName "Rotary evaporator" .
+    rdfs:label "Rotary evaporator" .
 
 ex:deviceComponent2 a riskman:DeviceComponent ;
-    riskman:hasName "Electrode cable" .
+    rdfs:label "Electrode cable" .
 
 ex:deviceComponent99 a riskman:DeviceComponent ;
-    riskman:hasName "Battery" .
+    rdfs:label "Battery" .
 
 ex:deviceContext1 a riskman:DeviceContext ;
-    riskman:hasName "Chemical manufacturing" .
+    rdfs:label "Chemical manufacturing" .
 
 ex:deviceContext2 a riskman:DeviceContext ;
-    riskman:hasName "Operating room setting" .
+    rdfs:label "Operating room setting" .
 
 ex:deviceContext99 a riskman:DeviceContext ;
-    riskman:hasName "Emergency medical setting" .
+    rdfs:label "Emergency medical setting" .
 
 ex:deviceFunction1 a riskman:DeviceFunction ;
-    riskman:hasName "Solvent removal" .
+    rdfs:label "Solvent removal" .
 
 ex:deviceFunction2 a riskman:DeviceFunction ;
-    riskman:hasName "Electrosurgery" .
+    rdfs:label "Electrosurgery" .
 
 ex:deviceFunction99 a riskman:DeviceFunction ;
-    riskman:hasName "Defibrillation" .
+    rdfs:label "Defibrillation" .
 
 ex:domainSpecificHazard1 a riskman:DomainSpecificHazard ;
     riskman:hasDeviceComponent ex:deviceComponent1 ;
     riskman:hasDeviceFunction ex:deviceFunction1 ;
     riskman:hasHazard ex:hazard1 ;
-    riskman:hasName "Rotary evaporator solvent removal chemical hazard" .
+    rdfs:label "Rotary evaporator solvent removal chemical hazard" .
 
 ex:domainSpecificHazard2 a riskman:DomainSpecificHazard ;
     riskman:hasDeviceComponent ex:deviceComponent2 ;
     riskman:hasDeviceFunction ex:deviceFunction2 ;
     riskman:hasHazard ex:hazard2 ;
-    riskman:hasName "Electrode cable electrosurgery hazard" .
+    rdfs:label "Electrode cable electrosurgery hazard" .
 
 ex:domainSpecificHazard99 a riskman:DomainSpecificHazard ;
     riskman:hasDeviceComponent ex:deviceComponent99 ;
     riskman:hasDeviceFunction ex:deviceFunction99 ;
     riskman:hasHazard ex:hazard99 ;
-    riskman:hasName "Battery-level related defibrillator hazard" .
+    rdfs:label "Battery-level related defibrillator hazard" .
 
 ex:event1 a riskman:Event ;
-    riskman:hasName "Incomplete removal of volatile solvent used in manufacturing" .
+    rdfs:label "Incomplete removal of volatile solvent used in manufacturing" .
 
 ex:event2 a riskman:Event ;
-    riskman:hasName "Electrode cable unintentionally plugged into power line receptacle" .
+    rdfs:label "Electrode cable unintentionally plugged into power line receptacle" .
 
 ex:event99 a riskman:Event ;
-    riskman:hasName "Defibrillator battery life runs out" .
+    rdfs:label "Defibrillator battery life runs out" .
 
 ex:harm1 a riskman:Harm ;
-    riskman:hasName "Brain damage" .
+    rdfs:label "Brain damage" .
 
 ex:harm2 a riskman:Harm ;
-    riskman:hasName "Serious burns" .
+    rdfs:label "Serious burns" .
 
 ex:harm99 a riskman:Harm ;
-    riskman:hasName "Death" .
+    rdfs:label "Death" .
 
 ex:hazard1 a riskman:Hazard ;
-    riskman:hasName "Chemical" .
+    rdfs:label "Chemical" .
 
 ex:hazard2 a riskman:Hazard ;
-    riskman:hasName "Electromagnetic energy" .
+    rdfs:label "Electromagnetic energy" .
 
 ex:hazard99 a riskman:Hazard ;
-    riskman:hasName "Functionality" .
+    rdfs:label "Functionality" .
 
 ex:hazardousSituation1 a riskman:HazardousSituation ;
-    riskman:hasName "Development of gas embolism" ;
+    rdfs:label "Development of gas embolism" ;
     riskman:hasPrecedingEvent ex:event1 .
 
 ex:hazardousSituation2 a riskman:HazardousSituation ;
-    riskman:hasName "Line voltage appears on electrodes" ;
+    rdfs:label "Line voltage appears on electrodes" ;
     riskman:hasPrecedingEvent ex:event2 .
 
 ex:hazardousSituation99 a riskman:HazardousSituation ;
-    riskman:hasName "Cannot deliver shock when an arrythmia occurs" ;
+    rdfs:label "Cannot deliver shock when an arrythmia occurs" ;
     riskman:hasPrecedingEvent ex:event99 .
 
 # initial risk levels
 
 ex:initialRiskLevel1 a riskman:RiskLevel ;
-    riskman:hasName "Initial Risk Level 1" ;
+    rdfs:label "Initial Risk Level 1" ;
     riskman:hasProbability rlevel:p4 ;
     riskman:hasSeverity rlevel:s2 .
 
 ex:initialRiskLevel2 a riskman:RiskLevel ;
-    riskman:hasName "Initial Risk Level 2" ;
+    rdfs:label "Initial Risk Level 2" ;
     riskman:hasProbability rlevel:p3 ;
     riskman:hasProbability1 rlevel:p4 ;
     riskman:hasProbability2 rlevel:p4 ;
     riskman:hasSeverity rlevel:s4 .
 
 ex:initialRiskLevel99 a riskman:RiskLevel ;
-    riskman:hasName "Initial Risk Level 99" ;
+    rdfs:label "Initial Risk Level 99" ;
     riskman:hasProbability rlevel:p5 ;
     riskman:hasSeverity rlevel:s3 .
 
 # residual risk levels
 
 ex:residualRiskLevel1 a riskman:RiskLevel ;
-    riskman:hasName "Residual Risk Level 1" ;
+    rdfs:label "Residual Risk Level 1" ;
     riskman:hasProbability rlevel:p3 ;
     riskman:hasSeverity rlevel:s2 .
 
 ex:residualRiskLevel2 a riskman:RiskLevel ;
-    riskman:hasName "Residual Risk Level 2" ;
+    rdfs:label "Residual Risk Level 2" ;
     riskman:hasProbability rlevel:p2 ;
     riskman:hasSeverity rlevel:s1 .
 
 ex:residualRiskLevel99 a riskman:RiskLevel ;
-    riskman:hasName "Residual Risk Level 99" ;
+    rdfs:label "Residual Risk Level 99" ;
     riskman:hasProbability rlevel:p2 ;
     riskman:hasProbability1 rlevel:p3 ;
     riskman:hasProbability2 rlevel:p4 ;
@@ -214,50 +214,50 @@ ex:residualRiskLevel99 a riskman:RiskLevel ;
 # SDA
 
 ex:sda1 a riskman:SDA ;
-    riskman:hasName "Implementation of an automated solvent monitoring system" ;
+    rdfs:label "Implementation of an automated solvent monitoring system" ;
     riskman:hasSubSDA ex:sda11 ;
     riskman:hasSubSDA ex:sda12 .
 
 ex:sda11 a riskman:SDA ;
-    riskman:hasName "Sub SDA11" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] .
+    rdfs:label "Sub SDA11" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] .
 
 ex:sda12 a riskman:SDA ;
-    riskman:hasName "Sub SDA12" ;
+    rdfs:label "Sub SDA12" ;
     riskman:hasSubSDA ex:sda121 ;
     riskman:hasSubSDA ex:sda122 .
     
 ex:sda121 a riskman:SDA ;
-    riskman:hasName "Sub SDA121" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] .
+    rdfs:label "Sub SDA121" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] .
 
 
 ex:sda122 a riskman:SDA ;
-    riskman:hasName "Sub SDA122" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] .
+    rdfs:label "Sub SDA122" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] .
 
 
 ex:sda2 a riskman:SDA ;
-    riskman:hasName "Use polarized plugs" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] .
+    rdfs:label "Use polarized plugs" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] .
 
 
 ex:sda99 a riskman:SDA ;
-    riskman:hasName "Indicate low battery level" ;
+    rdfs:label "Indicate low battery level" ;
     riskman:hasSubSDA ex:sda991 ;
     riskman:hasSubSDA ex:sda992 ;
-    riskman:hasSafetyAssurance [ riskman:hasName "Safety assurance" ] .
+    riskman:hasSafetyAssurance [ rdfs:label "Safety assurance" ] .
 
 ex:sda991 a riskman:SDA ;
-    riskman:hasName "Indicate low battery level" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] ;
-    riskman:hasSafetyAssurance [ riskman:hasName "Safety assurance" ] .
+    rdfs:label "Indicate low battery level" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] ;
+    riskman:hasSafetyAssurance [ rdfs:label "Safety assurance" ] .
 
 
 ex:sda992 a riskman:SDA ;
-    riskman:hasName "Indicate low battery level" ;
-    riskman:hasImplementationManifest [ riskman:hasName "Implementation manifest"  ] ;
-    riskman:hasSafetyAssurance [ riskman:hasName "Safety assurance" ] .
+    rdfs:label "Indicate low battery level" ;
+    riskman:hasImplementationManifest [ rdfs:label "Implementation manifest"  ] ;
+    riskman:hasSafetyAssurance [ rdfs:label "Safety assurance" ] .
 
 
 

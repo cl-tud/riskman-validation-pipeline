@@ -15,7 +15,7 @@ PREFIXES = f'''
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix {OWL_PREFIX}: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ex: <http://aaexample.org#> .
+@prefix ex: <http://example.org#> .
 @prefix {RISKMAN_PREFIX}: <https://w3id.org/riskman/ontology#> .
 @prefix schema: <https://schema.org/> .
 @prefix {BASE_PREFIX}: {BASE_IRI} .
