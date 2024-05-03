@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <html prefix="riskman: https://w3id.org/riskman/ontology#" >
+    <title>Risk Management File</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        th {
+            background-color: rgb(211, 211, 211);
+        }
+
+        .separator {
+            border-top: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="4"></th>
+                    <th colspan="13">Controlled Risk</th>
+                </tr>
+                <tr>
+                    <th colspan="9">Analyzed Risk</th>
+                    <th rowspan="3">Risk SDA</th>
+                    <th rowspan="2" colspan="2">Residual Risk Level</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Domain Specific Hazard</th>
+                    <th rowspan="2">Harm</th>
+                    <th rowspan="2">Device Context</th>
+                    <th rowspan="2">Event</th>
+                    <th rowspan="2">Hazardous Situation</th>
+                    <th colspan="2">Initial Risk Level</th>
+                </tr>
+                <tr>
+                    <th>Hazard</th>
+                    <th>Function</th>
+                    <th>Component</th>
+                    <th>Prob.</th>
+                    <th>Sev.</th>
+                    <th>Prob.</th>
+                    <th>Sev.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 1) -->
+                <tr>
+                    <td rowspan="3" resource="controlledRisk1" typeof="riskman:ControlledRisk">
+                        <span property="riskman:hasID">1</span>
+                        <link property="riskman:hasAnalyzedRisk" href="analyzedRisk1"/>
+                        <link property="riskman:hasSDA" href="sda1"/>
+                        <link property="riskman:hasResidualRiskLevel" href="residualRiskLevel1"/>
+                    </td>
+                    <td colspan="9" resource="analyzedRisk1" typeof="riskman:AnalyzedRisk">
+                        <span property="riskman:hasName">Solvent removal risk of brain damage</span>
+                        <link property="riskman:hasDomainSpecificHazard" href="domainSpecificHazard1"/>
+                        <link property="riskman:hasHarm" href="harm1"/>
+                        <link property="riskman:hasDeviceContext" href="deviceContext1"/>
+                        <link property="riskman:hasHazardousSituation" href="hazardousSituation1"/>
+                        <link property="riskman:hasInitialRiskLevel" href="initialRiskLevel1"/>
+                    </td>
+                    <td rowspan="3" resource="sda1" typeof="riskman:SDA">
+                        <span property="riskman:hasName">Implementation of an automated solvent monitoring system</span>
+                    </td>
+                    <td rowspan="2" colspan="3" resource="residualRiskLevel1" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Residual Risk Level 1</span>
+                        <link property="riskman:hasProbability" href="residualProbability1"/>
+                        <link property="riskman:hasSeverity" href="residualSeverity1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" resource="domainSpecificHazard1" typeof="riskman:DomainSpecificHazard">
+                        <span property="riskman:hasName">Rotary evaporator solvent removal chemical hazard</span>
+                        <link property="riskman:hasHazard" href="hazard1"/>
+                        <link property="riskman:hasDeviceFunction" href="deviceFunction1"/>
+                        <link property="riskman:hasDeviceComponent" href="deviceComponent1"/>
+                    </td>
+                    <td rowspan="2" resource="harm1" typeof="riskman:Harm">
+                        <span property="riskman:hasName">Brain damage</span>
+                    </td>
+                    <td rowspan="2" resource="deviceContext1" typeof="riskman:DeviceContext">
+                        <span property="riskman:hasName">Chemical manufacturing</span>
+                    </td>
+                    <td rowspan="2" resource="event1" typeof="riskman:Event">
+                        <span property="riskman:hasName">Incomplete removal of volatile solvent used in manufacturing</span>
+                    </td>
+                    <td rowspan="2" resource="hazardousSituation1" typeof="riskman:HazardousSituation">
+                        <span property="riskman:hasName">Development of gas embolism</span>
+                        <link property="riskman:hasPrecedingEvent" href="event1"/>
+                    </td>
+                    <td colspan="2" resource="initialRiskLevel1" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Initial Risk Level 1</span>
+                        <link property="riskman:hasProbability" href="initialProbability1"/>
+                        <link property="riskman:hasSeverity" href="initialSeverity1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td resource="hazard1" typeof="riskman:Hazard">
+                        <span property="riskman:hasName">Chemical</span>
+                    </td>
+                    <td resource="deviceFunction1" typeof="riskman:DeviceFunction">
+                        <span property="riskman:hasName">Solvent removal</span>
+                    </td>
+                    <td resource="deviceComponent1" typeof="riskman:DeviceComponent">
+                        <span property="riskman:hasName">Rotary evaporator</span>
+                    </td>
+                    <td resource="initialProbability1" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">3</span>
+                    </td>
+                    <td resource="initialSeverity1" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">4</span>
+                    </td>
+                    <td resource="residualProbability1" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">2</span>
+                    </td>
+                    <td resource="residualSeverity1" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">3</span>
+                    </td>
+                </tr>
+                <tr class="separator"></tr>
+                <!-- 2 -->
+                <tr>
+                    <td rowspan="3" resource="controlledRisk2" typeof="riskman:ControlledRisk">
+                        <span property="riskman:hasID">2</span>
+                        <link property="riskman:hasAnalyzedRisk" href="analyzedRisk2"/>
+                        <link property="riskman:hasSDA" href="sda2"/>
+                        <link property="riskman:hasResidualRiskLevel" href="residualRiskLevel2"/>
+                    </td>
+                    <td colspan="9" resource="analyzedRisk2" typeof="riskman:AnalyzedRisk">
+                        <span property="riskman:hasName">Electrode cable risk of serious burns</span>
+                        <link property="riskman:hasDomainSpecificHazard" href="domainSpecificHazard2"/>
+                        <link property="riskman:hasHarm" href="harm2"/>
+                        <link property="riskman:hasDeviceContext" href="deviceContext2"/>
+                        <link property="riskman:hasHazardousSituation" href="hazardousSituation2"/>
+                        <link property="riskman:hasInitialRiskLevel" href="initialRiskLevel2"/>
+                    </td>
+                    <td rowspan="3" resource="sda2" typeof="riskman:SDA">
+                        <span property="riskman:hasName">Use polarized plugs</span>
+                    </td>
+                    <td rowspan="2" colspan="3" resource="residualRiskLevel2" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Residual Risk Level 2</span>
+                        <link property="riskman:hasProbability" href="residualProbability2"/>
+                        <link property="riskman:hasSeverity" href="residualSeverity2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" resource="domainSpecificHazard2" typeof="riskman:DomainSpecificHazard">
+                        <span property="riskman:hasName">Electrode cable electrosurgery hazard</span>
+                        <link property="riskman:hasHazard" href="hazard2"/>
+                        <link property="riskman:hasDeviceFunction" href="deviceFunction2"/>
+                        <link property="riskman:hasDeviceComponent" href="deviceComponent2"/>
+                    </td>
+                    <td rowspan="2" resource="harm2" typeof="riskman:Harm">
+                        <span property="riskman:hasName">Serious burns</span>
+                    </td>
+                    <td rowspan="2" resource="deviceContext2" typeof="riskman:DeviceContext">
+                        <span property="riskman:hasName">Operating room setting</span>
+                    </td>
+                    <td rowspan="2" resource="event2" typeof="riskman:Event">
+                        <span property="riskman:hasName">Electrode cable unintentionally plugged into power line receptacle</span>
+                    </td>
+                    <td rowspan="2" resource="hazardousSituation2" typeof="riskman:HazardousSituation">
+                        <span property="riskman:hasName">Line voltage appears on electrodes</span>
+                        <link property="riskman:hasPrecedingEvent" href="event2"/>
+                    </td>
+                    <td colspan="2" resource="initialRiskLevel2" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Initial Risk Level 2</span>
+                        <link property="riskman:hasProbability" href="initialProbability2"/>
+                        <link property="riskman:hasSeverity" href="initialSeverity2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td resource="hazard2" typeof="riskman:Hazard">
+                        <span property="riskman:hasName">Electromagnetic energy</span>
+                    </td>
+                    <td resource="deviceFunction2" typeof="riskman:DeviceFunction">
+                        <span property="riskman:hasName">Electrosurgery</span>
+                    </td>
+                    <td resource="deviceComponent2" typeof="riskman:DeviceComponent">
+                        <span property="riskman:hasName">Electrode cable</span>
+                    </td>
+                    <td resource="initialProbability2" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">3</span>
+                    </td>
+                    <td resource="initialSeverity2" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">4</span>
+                    </td>
+                    <td resource="residualProbability2" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">1</span>
+                    </td>
+                    <td resource="residualSeverity2" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">2</span>
+                    </td>
+                </tr>
+                <tr class="separator"></tr>
+                <tr>
+                    <td colspan="13" style="text-align: center;">...</td>
+                </tr>
+                <tr class="separator"></tr>
+                <!-- 99 -->
+                <tr>
+                    <td rowspan="3" resource="controlledRisk99" typeof="riskman:ControlledRisk">
+                        <span property="riskman:hasID">99</span>
+                        <link property="riskman:hasAnalyzedRisk" href="analyzedRisk99"/>
+                        <link property="riskman:hasSDA" href="sda99"/>
+                        <link property="riskman:hasResidualRiskLevel" href="residualRiskLevel99"/>
+                    </td>
+                    <td colspan="9" resource="analyzedRisk99" typeof="riskman:AnalyzedRisk">
+                        <span property="riskman:hasName">Risk of death due to defibrillator battery running out</span>
+                        <link property="riskman:hasDomainSpecificHazard" href="domainSpecificHazard99"/>
+                        <link property="riskman:hasHarm" href="harm99"/>
+                        <link property="riskman:hasDeviceContext" href="deviceContext99"/>
+                        <link property="riskman:hasHazardousSituation" href="hazardousSituation99"/>
+                        <link property="riskman:hasInitialRiskLevel" href="initialRiskLevel99"/>
+                    </td>
+                    <td rowspan="3" resource="sda99" typeof="riskman:SDA">
+                        <span property="riskman:hasName">Indicate low battery level</span>
+                    </td>
+                    <td rowspan="2" colspan="3" resource="residualRiskLevel99" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Residual Risk Level 99</span>
+                        <link property="riskman:hasProbability" href="residualProbability99"/>
+                        <link property="riskman:hasSeverity" href="residualSeverity99"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" resource="domainSpecificHazard99" typeof="riskman:DomainSpecificHazard">
+                        <span property="riskman:hasName">Battery-level related defibrillator hazard</span>
+                        <link property="riskman:hasHazard" href="hazard99"/>
+                        <link property="riskman:hasDeviceFunction" href="deviceFunction99"/>
+                        <link property="riskman:hasDeviceComponent" href="deviceComponent99"/>
+                    </td>
+                    <td rowspan="2" resource="harm99" typeof="riskman:Harm">
+                        <span property="riskman:hasName">Death</span>
+                    </td>
+                    <td rowspan="2" resource="deviceContext99" typeof="riskman:DeviceContext">
+                        <span property="riskman:hasName">Emergency medical setting</span>
+                    </td>
+                    <td rowspan="2" resource="event99" typeof="riskman:Event">
+                        <span property="riskman:hasName">Defibrillator battery life runs out</span>
+                    </td>
+                    <td rowspan="2" resource="hazardousSituation99" typeof="riskman:HazardousSituation">
+                        <span property="riskman:hasName">Cannot deliver shock when an arrythmia occurs</span>
+                        <link property="riskman:hasPrecedingEvent" href="event99"/>
+                    </td>
+                    <td colspan="2" resource="initialRiskLevel99" typeof="riskman:RiskLevel">
+                        <span property="riskman:hasName">Initial Risk Level 99</span>
+                        <link property="riskman:hasProbability" href="initialProbability99"/>
+                        <link property="riskman:hasSeverity" href="initialSeverity99"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td resource="hazard99" typeof="riskman:Hazard">
+                        <span property="riskman:hasName">Functionality</span>
+                    </td>
+                    <td resource="deviceFunction99" typeof="riskman:DeviceFunction">
+                        <span property="riskman:hasName">Defibrillation</span>
+                    </td>
+                    <td resource="deviceComponent99" typeof="riskman:DeviceComponent">
+                        <span property="riskman:hasName">Battery</span>
+                    </td>
+                    <td resource="initialProbability99" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">3</span>
+                    </td>
+                    <td resource="initialSeverity99" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">5</span>
+                    </td>
+                    <td resource="residualProbability99" typeof="riskman:Probability">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">2</span>
+                    </td>
+                    <td resource="residualSeverity99" typeof="riskman:Severity">
+                        <span property="riskman:hasIntegerValue" datatype="xsd:integer">5</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

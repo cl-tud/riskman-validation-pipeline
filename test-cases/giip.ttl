@@ -45,7 +45,7 @@ ex:controlledRisk1 a riskman:ControlledRisk ;
     riskman:hasAnalyzedRisk ex:analyzedRisk1 ;
     dc:identifier "cr" ;
     riskman:hasResidualRiskLevel ex:residualRiskLevel1 ;
-    riskman:hasSDA ex:sda1 .
+    riskman:isMitigatedBy ex:sda1 .
 
 ex:analyzedRisk1 a riskman:AnalyzedRisk ;
     riskman:hasDeviceContext ex:deviceContext1 ;

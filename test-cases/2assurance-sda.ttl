@@ -48,21 +48,21 @@ ex:controlledRisk1 a riskman:ControlledRisk ;
     riskman:hasAnalyzedRisk ex:analyzedRisk1 ;
     riskman:hasID "1" ;
     riskman:hasResidualRiskLevel ex:residualRiskLevel1 ;
-    riskman:hasSDA ex:sda1 .
+    riskman:isMitigatedBy ex:sda1 .
 
 
 ex:controlledRisk2 a riskman:ControlledRisk ;
     riskman:hasAnalyzedRisk ex:analyzedRisk2 ;
     riskman:hasID "2" ;
     riskman:hasResidualRiskLevel ex:residualRiskLevel2 ;
-    riskman:hasSDA ex:sda2 .
+    riskman:isMitigatedBy ex:sda2 .
 
 
 ex:controlledRisk99 a riskman:ControlledRisk ;
     riskman:hasAnalyzedRisk ex:analyzedRisk99 ;
     riskman:hasID "99" ;
     riskman:hasResidualRiskLevel ex:residualRiskLevel99 ;
-    riskman:hasSDA ex:sda99 .
+    riskman:isMitigatedBy ex:sda99 .
 
 ex:analyzedRisk1 a riskman:AnalyzedRisk ;
     riskman:hasDeviceContext ex:deviceContext1 ;
