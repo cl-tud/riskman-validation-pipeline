@@ -28,16 +28,16 @@ wget -O ontology.ttl https://w3id.org/riskman/ontology
 wget -O shapes.ttl https://w3id.org/riskman/shapes
 ```
 
-![alt text](flow.png)
+![alt text](img/flow.png)
 
 
 ### RDFa distillation:
 
 ```
-cat submission_correct.html | ./rdf_distiller.sh 
+cat test-cases/submission_correct.html | ./rdf_distiller.sh 
 ```
 
-![alt text](instance.png)
+![alt text](img/instance.png)
 
 
 ### Correct examples
