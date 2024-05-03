@@ -5,7 +5,8 @@ import sys
 OUTPUT_FILE = 'prob_sev_onto.ttl'
 
 BASE_PREFIX='rlevel'
-BASE_IRI='<https://w3id.org/riskman/risk-level#>'
+# BASE_IRI='<https://w3id.org/riskman/risk-level#>'
+BASE_IRI='<https://w3id.org/riskman/ontology#>'
 RISKMAN_PREFIX = 'riskman'
 OWL_PREFIX = 'owl'
 

@@ -37,36 +37,39 @@ wget -O shapes.ttl https://w3id.org/riskman/shapes
 cat submission_correct.html | ./rdf_distiller.sh 
 ```
 
-### ABox validation
-
-```
-cat test-cases/corr.ttl ontology.ttl | ./reasoner.sh | ./validator.sh shapes.ttl 
-cat test-cases/1missing-im.ttl ontology.ttl | ./reasoner.sh | ./validator.sh shapes.ttl 
-cat test-cases/2assurance-sda.ttl ontology.ttl | ./reasoner.sh | ./validator.sh shapes.ttl 
-
-```
+![alt text](instance.png)
 
 
-
-
-### Catching errors:
-1.  Missing implementation manifest (file [1missing-im.ttl](test/1missing-im.ttl), violating `SDAShape`) 
+### Correct examples
+1.  Correct GIIP example (file [giip.ttl](test-cases/giip.ttl)) 
 
       ```
-      cat test/1missing-im.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      cat test-cases/giip.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      ```
+
+2. Another example (file [corr.ttl](test-cases/corr.ttl))
+      ```
+      cat test-cases/corr.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      ```
+
+### Incorrect examples:
+1.  Missing implementation manifest (file [1missing-im.ttl](test-cases/1missing-im.ttl), violating `SDAShape`) 
+
+      ```
+      cat test-cases/1missing-im.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
       ```
 
       Explanation: `ex:sda121` is a leaf SDA and has no implementation manifest.
 
-2. Child of an AssuranceSDA not an AssuranceSDA (file [2assurance-sda.ttl](test/2assurance-sda.ttl), violating `AssuranceSDAShape`)
+2. Child of an AssuranceSDA not an AssuranceSDA (file [2assurance-sda.ttl](test-cases/2assurance-sda.ttl), violating `AssuranceSDAShape`)
       ```
-      cat test/2assurance-sda.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      cat test-cases/2assurance-sda.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
       ```
       Explanation: `ex:sda991` is a child of an AssuranceSDA but is missing the safety assurance so it's itself not an AssuranceSDA. Therefore the requirement that subtree rooted at an AssuranceSDA must again be created from AssuranceSDAs is violated. 
 
-3. Specifying all 3 probabilities, P != P1 x P2 (file [3probability-product.ttl](test/3probability-product.ttl), violating `RiskLevelShape`)
+3. Specifying all 3 probabilities, P != P1 x P2 (file [3probability-product.ttl](test-cases/3probability-product.ttl), violating `RiskLevelShape`)
       ```
-      cat test/3probability-product.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      cat test-cases/3probability-product.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
       ```
       `initialRiskLevel2` specifies all 3 probabilities, i.e.:
          P=4,
@@ -76,9 +79,9 @@ cat test-cases/2assurance-sda.ttl ontology.ttl | ./reasoner.sh | ./validator.sh 
 
 
 
-4. Residual probability higher than initial. (file [4residual-prob.ttl](test/4residual-prob.ttl), violating `NonIncreasingProbabilityShape`)
+4. Residual probability higher than initial. (file [4residual-prob.ttl](test-cases/4residual-prob.ttl), violating `NonIncreasingProbabilityShape`)
       ```
-      cat test/4residual-prob.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
+      cat test-cases/4residual-prob.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl   
       ```
 
       `initialRiskLevel1` specifies probability P as 2 whereas `residualRiskLevel1` specifies probability P as 3. The former is the initial probability of the (AnalyzedRisk of the) `controlledRisk1` and the latter is its residual risk level.
@@ -90,12 +93,19 @@ cat test-cases/2assurance-sda.ttl ontology.ttl | ./reasoner.sh | ./validator.sh 
 Generally, the pipeline is run with the following chain of commands:
 
 ```
-cat <HTML SUBMISSION FILE> | ./rdf_distiller.sh | cat - <ONTOLOGY FILE> | ./reasoner.sh | ./validator.sh <SHAPES FILE>
+cat <HTML SUBMISSION FILE> | ./rdf_distiller.sh | cat - <ONTOLOGY FILE> | ./prob_sev.sh -p <# PROB. CLASSES> -s <# SEV. CLASSES> | ./reasoner.sh | ./validator.sh <SHAPES FILE>
 ```
 
 - `cat <SUBMISSION FILE>` echo the contents of the `<SUBMISSION FILE>` file, an HTML file with RDFa annotations
 - `| ./rdf_distiller.sh` extract the RDF triples from the HTML file
 - `| cat - <ONTOLOGY FILE>` combine the extracted triples with the appropriate riskman ontology `<ONTOLOGY FILE>`
+- `| ./prob_sev.sh -p <# PROB. CLASSES> -s <# SEV. CLASSES>` (optional), supply the additional "Probability-Severity" ontology, with `<# PROB. CLASSES>` number of probability classes and `<# SEV. CLASSES>` number of severity classes (both integers)
 - `| ./reasoner.sh` apply inference, realize the ontology
 - `| ./validator.sh <SHAPES FILE>` validate against the shapes `<SHAPES FILE>`
 ``
+
+Note that in the above examples we omitted the ditillation phase, and simply used already extracted ABoxes, i.e.:
+
+```
+cat <ABOX RDF FILE> <ONTOLOGY FILE> | ./prob_sev.sh -p <# PROB. CLASSES> -s <# SEV. CLASSES> | ./reasoner.sh | ./validator.sh <SHAPES FILE>
+```

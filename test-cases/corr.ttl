@@ -38,7 +38,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://example.org#> .
-@prefix rlevel: <https://w3id.org/riskman/risk-level#> .
+@prefix rlevel: <https://w3id.org/riskman/ontology#> .
 
 
 
