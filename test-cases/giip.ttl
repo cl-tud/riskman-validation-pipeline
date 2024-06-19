@@ -55,6 +55,10 @@ ex:analyzedRisk1 a riskman:AnalyzedRisk ;
     riskman:hasInitialRiskLevel ex:initialRiskLevel1 ;
     dc:identifier "ar" .
 
+ex:deviceProblem1 a riskman:DeviceProblem ;
+    rdfs:label "Defecitve Alarm (IMDRF A160106)" ;
+    dc:identifier "dp" .
+
 ex:deviceComponent1 a riskman:DeviceComponent ;
     rdfs:label "Non-audio alarm" ;
     dc:identifier "dcm" .
@@ -69,6 +73,7 @@ ex:deviceFunction1 a riskman:DeviceFunction ;
 
 ex:domainSpecificHazard1 a riskman:DomainSpecificHazard ;
     riskman:hasDeviceComponent ex:deviceComponent1 ;
+    riskman:hasDeviceProblem ex:deviceProblem1 ;
     riskman:hasDeviceFunction ex:deviceFunction1 ;
     riskman:hasHazard ex:hazard1 ;
     dc:identifier "dsh" .

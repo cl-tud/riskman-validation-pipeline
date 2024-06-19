@@ -1,0 +1,179 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ctag: <http://commontag.org/ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix grddl: <http://www.w3.org/2003/g/data-view#> .
+@prefix hcalendar: <http://microformats.org/profile/hcalendar#> .
+@prefix hcard: <http://microformats.org/profile/hcard#> .
+@prefix ical: <http://www.w3.org/2002/12/cal/icaltzd#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix md: <http://www.w3.org/ns/md#> .
+@prefix og: <http://ogp.me/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix rif: <http://www.w3.org/2007/rif#> .
+@prefix riskman: <https://w3id.org/riskman/ontology#> .
+@prefix rlevel: <https://w3id.org/riskman/ontology#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <http://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix v: <http://rdf.data-vocabulary.org/#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wdr: <http://www.w3.org/2007/05/powder#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/tmp_file.html> md:item () .
+
+<http://example.org/controlledRisk1> a riskman:ControlledRisk ;
+    dc:identifier "cr" ;
+    riskman:hasAnalyzedRisk <http://example.org/analyzedRisk1> ;
+    riskman:hasResidualRiskLevel <http://example.org/residualRiskLevel1> ;
+    riskman:isMitigatedBy <http://example.org/sda0> .
+
+<http://example.org/analyzedRisk1> a riskman:AnalyzedRisk ;
+    rdfs:label "Loss of consciousness due to an alarm malfunction" ;
+    dc:identifier "ar" ;
+    riskman:hasDeviceContext <http://example.org/deviceContext1> ;
+    riskman:hasDomainSpecificHazard <http://example.org/domainSpecificHazard1> ;
+    riskman:hasHarm <http://example.org/harm1> ;
+    riskman:hasHazardousSituation <http://example.org/hazardousSituation1> ;
+    riskman:hasInitialRiskLevel <http://example.org/initialRiskLevel1> .
+
+<http://example.org/deviceComponent1> a riskman:DeviceComponent ;
+    rdfs:label "Non-audio alarm" ;
+    dc:identifier "dcm" .
+
+<http://example.org/deviceContext1> a riskman:DeviceContext ;
+    rdfs:label "Normal use" ;
+    dc:identifier "dcx" .
+
+<http://example.org/deviceFunction1> a riskman:DeviceFunction ;
+    rdfs:label "Alarm" ;
+    dc:identifier "df" .
+
+<http://example.org/deviceProblem1> a riskman:DeviceProblem ;
+    rdfs:label "Defecitve Alarm (IMDRF A160106)" ;
+    dc:identifier "dp" .
+
+<http://example.org/domainSpecificHazard1> a riskman:DomainSpecificHazard ;
+    rdfs:label "Non-audio alarm malfunctions" ;
+    dc:identifier "dsh" ;
+    riskman:hasDeviceComponent <http://example.org/deviceComponent1> ;
+    riskman:hasDeviceFunction <http://example.org/deviceFunction1> ;
+    riskman:hasDeviceProblem <http://example.org/deviceProblem1> ;
+    riskman:hasHazard <http://example.org/hazard1> .
+
+<http://example.org/event1> a riskman:Event ;
+    rdfs:label "Vibration mechanism fails" ;
+    dc:identifier "ev1" .
+
+<http://example.org/event2> a riskman:Event ;
+    rdfs:label "Vibration cannot be felt" ;
+    dc:identifier "ev2" ;
+    riskman:hasPrecedingEvent <http://example.org/event1> .
+
+<http://example.org/harm1> a riskman:Harm ;
+    rdfs:label "Loss of consciousness" ;
+    dc:identifier "hr" .
+
+<http://example.org/hazard1> a riskman:Hazard ;
+    rdfs:label "Non-audio alarm malfunctions" ;
+    dc:identifier "hz" .
+
+<http://example.org/hazardousSituation1> a riskman:HazardousSituation ;
+    rdfs:label "Underdose" ;
+    dc:identifier "hs" ;
+    riskman:hasPrecedingEvent <http://example.org/event2> .
+
+<http://example.org/im1> a riskman:ImplementationManifest ;
+    rdfs:label "Sec. 10.3 of Alarm report." ;
+    dc:identifier "im1" .
+
+<http://example.org/im2> a riskman:ImplementationManifest ;
+    rdfs:label "Sec 10.7 of Alarm report." ;
+    dc:identifier "im2" ;
+    schema:additionalProperty [ schema:name "X" ;
+            schema:value "0.5"^^xsd:float ] .
+
+<http://example.org/im3> a riskman:ImplementationManifest ;
+    rdfs:label "Sec. 10.11 of Alarm report." ;
+    dc:identifier "im3" .
+
+<http://example.org/im4> a riskman:ImplementationManifest ;
+    rdfs:label "Sec. 5.3 of Loudspeaker test." ;
+    dc:identifier "im4" ;
+    schema:additionalProperty [ schema:name "X" ;
+            schema:value 45 ],
+        [ schema:name "Y" ;
+            schema:value 1 ] .
+
+<http://example.org/initialRiskLevel1> a riskman:RiskLevel ;
+    riskman:hasProbability1 riskman:p5 ;
+    riskman:hasProbability2 riskman:p4 ;
+    riskman:hasSeverity riskman:s4 .
+
+<http://example.org/residualRiskLevel1> a riskman:RiskLevel ;
+    riskman:hasProbability riskman:p3 ;
+    riskman:hasSeverity riskman:s4 .
+
+<http://example.org/sda0> a riskman:SDA ;
+    rdfs:label """Alternative alerting when vibration mechanism of non-audio alarm
+                            fails.""" ;
+    dc:identifier "sd0" ;
+    riskman:hasSubSDA <http://example.org/sda1>,
+        <http://example.org/sda2>,
+        <http://example.org/sda3> .
+
+<http://example.org/sda1> a riskman:SDA ;
+    rdfs:label "Additional visual (blinking) signal." ;
+    dc:identifier "sd1" ;
+    riskman:hasImplementationManifest <http://example.org/im1> .
+
+<http://example.org/sda2> a riskman:SDA ;
+    rdfs:label "Notification recurs every X minutes." ;
+    dc:identifier "sd2" ;
+    riskman:hasImplementationManifest <http://example.org/im2> .
+
+<http://example.org/sda3> a riskman:SDA ;
+    rdfs:label "Additional audio alarm." ;
+    dc:identifier "sd3" ;
+    riskman:hasSubSDA <http://example.org/sda4>,
+        <http://example.org/sda5> .
+
+<http://example.org/sda4> a riskman:SDA ;
+    rdfs:label "Audio signal if vibration signal not acknowledged." ;
+    dc:identifier "sd4" ;
+    riskman:hasImplementationManifest <http://example.org/im3> .
+
+<http://example.org/sda5> a riskman:SDA ;
+    rdfs:label "Audible signal is at least X db at Y m." ;
+    dc:identifier "sd5" ;
+    riskman:hasImplementationManifest <http://example.org/im4> ;
+    riskman:hasSafetyAssurance [ a riskman:SafetyAssurance ;
+            rdfs:label "IEC 60601" ] .
+
+riskman:p3 a riskman:Probability .
+
+riskman:p4 a riskman:Probability .
+
+riskman:p5 a riskman:Probability .
+
+riskman:s4 a riskman:Severity .
+
