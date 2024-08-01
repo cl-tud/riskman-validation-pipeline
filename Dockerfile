@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 # build 
 # docker build -t riskman-pipeline .
+# docker build -t riskman-pipeline . --progress=plain
 
 # use bash to have the "source" command and activate the environment
 SHELL ["/bin/bash", "-c"] 
@@ -38,8 +39,9 @@ RUN python3.11 -m venv kimeds_env && \
     pip install -r requirements.txt
 
 # download the ontology and shapes
-RUN wget -O ontology.ttl https://w3id.org/riskman/ontology
-RUN wget -O shapes.ttl https://w3id.org/riskman/shapes
+RUN rm -rf input && \
+    mkdir input 
+    # wget -O input/ontology.ttl https://w3id.org/riskman/ontology && \
+    # wget -O input/shapes.ttl https://w3id.org/riskman/shapes
 
-
-RUN cat test-cases/1missing-im.ttl ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl 
+ENTRYPOINT ["./main.sh"]

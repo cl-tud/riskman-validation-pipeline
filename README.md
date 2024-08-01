@@ -36,6 +36,10 @@ wget -O shapes.ttl https://w3id.org/riskman/shapes
 ```
 cat test-cases/submission_correct.html | ./rdf_distiller.sh 
 ```
+e.g.
+```
+cat test-cases/submission_correct.html | ./rdf_distiller.sh | cat - ontology.ttl | ./prob_sev.sh -p 5 -s 5 | ./reasoner.sh | ./validator.sh shapes.ttl
+```
 
 ![alt text](img/instance.png)
 

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # path to the python interpreter (TODO: modify, the venv is not in the root directory)
-python_path="kimeds_env/bin/python3"
+# python_path="kimeds_env/bin/python3"
+python_path="kimeds_env/bin/python3.11"
 
 prob=""
 sev=""

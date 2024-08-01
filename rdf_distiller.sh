@@ -5,7 +5,8 @@ tmp_file="tmp_file.html"
 distilled_tmp_file="distilled_tmp_file.html"
 
 # path to the python interpreter (TODO: modify, the venv is not in the root directory)
-python_path="kimeds_env/bin/python3"
+# python_path="kimeds_env/bin/python3"
+python_path="kimeds_env/bin/python3.11"
 
 # get the HTML (RDFa) from stdin
 input=$(cat)
