@@ -1,7 +1,37 @@
 # Riskman validation pipeline
 
+## Update 1.08.2024 (only on Linux)
 
-## Setup
+A Docker container is provided for easier setup of the pipeline.
+
+To build the container (provided that you have Docker installed), run:
+
+```bash
+docker build -t riskman-pipeline .
+```
+
+which will create the container with the pipeline. To use it afterwards, run:
+
+```bash
+./pipeline.sh -h <HTML FILE> -o <ONTOLOGY FILE> -c <SHAPES FILE> -p <# PROBABILITY CLASSES> -s <# SEVERITY CLASSES> -m html
+```
+to run evaluate an RDFa enhanced HTML file, e.g.
+```bash
+./pipeline.sh -h test-cases/submission_giip.html -o ontology.ttl -c shapes.ttl -p 5 -s 5 -m html
+```
+To evaluate a turtle ABox, run:
+
+```bash
+./pipeline.sh -a <ABOX FILE> -o <ONTOLOGY FILE> -c <SHAPES FILE> -p <# PROBABILITY CLASSES> -s <# SEVERITY CLASSES> -m abox
+```
+where `-m abox` stands for the ABox (rather than HTML) mode, e.g.
+```bash
+./pipeline.sh -a test-cases/1missing-im.ttl -o ontology.ttl -c shapes.ttl -p 5 -s 5 -m abox
+```
+
+___
+
+## (Legacy) Setup
 
 
 
