@@ -1,6 +1,6 @@
 # Riskman validation pipeline
 
-## Update 1.08.2024 (only on Linux)
+## Update 1.08.2024
 
 A Docker container is provided for easier setup of the pipeline.
 
@@ -10,7 +10,49 @@ To build the container (provided that you have Docker installed), run:
 docker build -t riskman-pipeline .
 ```
 
-which will create the container with the pipeline. To use it afterwards, run:
+which will create the container with the pipeline. 
+
+### Using the docker container directly
+
+1) submission mode: html - submitted files are HTML files with RDFa encodings  (like [/test-cases/submission_correct.html](/test-cases/submission_correct.html))
+
+```bash
+docker run \
+      -v <ABSOLUTE HTML FILE PATH>:/app/input/submission.html \
+      -v <ABSOLUTE ONTOLOGY FILE PATH>:/app/input/ontology.ttl \
+      -v <ABSOLUTE SHAPES FILE PATH>:/app/input/shapes.ttl \
+      -t <CONTAINER NAME> -p <NUMBER PROB. CLASSES> -s <NUMBER SEV. CLASSES> -m html
+```
+e.g.
+```bash
+docker run \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/test-cases/submission_correct.html:/app/input/submission.html  \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/ontology.ttl:/app/input/ontology.ttl  \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/shapes.ttl:/app/input/shapes.ttl      \
+      -t riskman-pipeline:latest -p 5 -s 5 -m html
+```
+
+2) submission mode: RDF abox - submitted files are directly RDF ABoxes (like [/test-cases/missing-im.ttl](/test-cases/1missing-im.ttl))
+
+```bash
+docker run \
+      -v <ABSOLUTE ABOX FILE PATH>:/app/input/abox.ttl \
+      -v <ABSOLUTE ONTOLOGY FILE PATH>:/app/input/ontology.ttl \
+      -v <ABSOLUTE SHAPES FILE PATH>:/app/input/shapes.ttl \
+      -t <CONTAINER NAME> -p <NUMBER PROB. CLASSES> -s <NUMBER SEV. CLASSES> -m abox
+```
+e.g.
+```bash
+docker run \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/test-cases/1missing-im.ttl:/app/input/abox.ttl  \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/ontology.ttl:/app/input/ontology.ttl            \
+      -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/shapes.ttl:/app/input/shapes.ttl                \
+      -t riskman-pipeline:latest -p 5 -s 5 -m abox
+```
+
+
+### Alternatively, a bash (only on Linux) script cam make things slightly easier: 
+To use it afterwards, run:
 
 ```bash
 ./pipeline.sh -h <HTML FILE> -o <ONTOLOGY FILE> -c <SHAPES FILE> -p <# PROBABILITY CLASSES> -s <# SEVERITY CLASSES> -m html
