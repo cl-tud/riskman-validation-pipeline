@@ -32,6 +32,301 @@ docker run \
       -t riskman-pipeline:latest -p 5 -s 5 -m html
 ```
 
+Expected output:
+```
+Classifying 25 elements
+Classifying:  100% complete in 00:00
+Classifying finished in 00:00
+Realizing 25 elements
+
+Realizing finished in 00:00
+/app/kimeds_env/lib/python3.11/site-packages/rdflib_jsonld/__init__.py:9: DeprecationWarning: The rdflib-jsonld package has been integrated into rdflib as of rdflib==6.0.0.  Please remove rdflib-jsonld from your project's dependencies.
+  warnings.warn(
+[
+  {
+    "@id": "_:N692223071cb54bbcb2be04b8eddaf940",
+    "@type": [
+      "http://www.w3.org/ns/shacl#ValidationReport"
+    ],
+    "http://www.w3.org/ns/shacl#conforms": [
+      {
+        "@value": false
+      }
+    ],
+    "http://www.w3.org/ns/shacl#result": [
+      {
+        "@id": "_:N2dcfe754a5e545f4a19cd62b9fbea12a"
+      },
+      {
+        "@id": "_:N7bb7842d5cd44b5daf8c208746efa895"
+      },
+      {
+        "@id": "_:N62604cc9062744f09b2b92b6b1129405"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2dcfe754a5e545f4a19cd62b9fbea12a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#ValidationResult"
+    ],
+    "http://www.w3.org/ns/shacl#focusNode": [
+      {
+        "@id": "http://example.org/sda99"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultMessage": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultPath": [
+      {
+        "@id": "_:N47d0cb4d5b534a63a08bd72fabbee3da"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultSeverity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceShape": [
+      {
+        "@id": "_:N49ab24535e8a4ffd9d6c17cbbeb9a281"
+      }
+    ]
+  },
+  {
+    "@id": "_:N47d0cb4d5b534a63a08bd72fabbee3da",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  },
+  {
+    "@id": "_:N49ab24535e8a4ffd9d6c17cbbeb9a281",
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "_:N8b190aca7e5d43d7b1d52d92be33496a"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
+      {
+        "@id": "_:N88086c92dbd24422867baf7d3601835c"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8b190aca7e5d43d7b1d52d92be33496a",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  },
+  {
+    "@id": "_:N88086c92dbd24422867baf7d3601835c",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#SDAI"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7bb7842d5cd44b5daf8c208746efa895",
+    "@type": [
+      "http://www.w3.org/ns/shacl#ValidationResult"
+    ],
+    "http://www.w3.org/ns/shacl#focusNode": [
+      {
+        "@id": "http://example.org/sda1"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultMessage": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultPath": [
+      {
+        "@id": "_:N4c0449fed9d343858348b639fbb1737f"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultSeverity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceShape": [
+      {
+        "@id": "_:N198d7c79ba7149eaa69023f99c6266bf"
+      }
+    ]
+  },
+  {
+    "@id": "_:N198d7c79ba7149eaa69023f99c6266bf",
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "_:Ne91ad26f2e2d4f639a89c79e43b2d6f6"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
+      {
+        "@id": "_:N113d5e56ade9484c80ed1025f7032398"
+      }
+    ]
+  },
+  {
+    "@id": "_:N113d5e56ade9484c80ed1025f7032398",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#SDAI"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne91ad26f2e2d4f639a89c79e43b2d6f6",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4c0449fed9d343858348b639fbb1737f",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  },
+  {
+    "@id": "_:N62604cc9062744f09b2b92b6b1129405",
+    "@type": [
+      "http://www.w3.org/ns/shacl#ValidationResult"
+    ],
+    "http://www.w3.org/ns/shacl#focusNode": [
+      {
+        "@id": "http://example.org/sda2"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultMessage": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultPath": [
+      {
+        "@id": "_:N0598cbc314ea4dcaa75db7083e8201f3"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#resultSeverity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#sourceShape": [
+      {
+        "@id": "_:N3941807ff377449d948ba5e350527c87"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3941807ff377449d948ba5e350527c87",
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "_:N488a003469b5403ea7c821275bb88c2b"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
+      {
+        "@id": "_:N2edcd245458e44a9aca2cdbe1d409fc2"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2edcd245458e44a9aca2cdbe1d409fc2",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#SDAI"
+      }
+    ]
+  },
+  {
+    "@id": "_:N488a003469b5403ea7c821275bb88c2b",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0598cbc314ea4dcaa75db7083e8201f3",
+    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
+      {
+        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
+      }
+    ]
+  }
+]
+```
+
+The error messages are e.g.:
+```
+"http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
+      }
+]
+```
+
+
 2) submission mode: RDF abox - submitted files are directly RDF ABoxes (like [/test-cases/missing-im.ttl](/test-cases/1missing-im.ttl))
 
 ```bash
@@ -49,6 +344,11 @@ docker run \
       -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/shapes.ttl:/app/input/shapes.ttl                \
       -t riskman-pipeline:latest -p 5 -s 5 -m abox
 ```
+
+### Output format
+
+By default, the output format is set to `json-ld`. It can alternatively be changed to `human`, `turtle`, `xml`, `json-ld`, `nt`, `n3`, to this end, modify the line 15 in the [./reasoner.sh](./reasoner.sh) accordingly.
+
 
 
 ### Alternatively, a bash (only on Linux) script cam make things slightly easier: 
