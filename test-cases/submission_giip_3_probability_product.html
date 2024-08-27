@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <html prefix="
+    riskman: https://w3id.org/riskman/ontology#
+    dc: http://purl.org/dc/terms/
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    rlevel: https://w3id.org/riskman/ontology#
+    schema: http://schema.org/">
+    <title>Risk Management File</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        th {
+            background-color: rgb(211, 211, 211);
+        }
+
+        .separator {
+            border-top: 2px solid black;
+        }
+
+        .im {
+            background-color: #b1f3b1;
+        }
+
+        .id {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="4"></th>
+                    <th colspan="17">Controlled Risk</th>
+                </tr>
+                <tr>
+                    <th colspan="10">Analyzed Risk</th>
+                    <th rowspan="3" colspan="4">SDA</th>
+                    <th rowspan="2" colspan="2">Residual Risk Level</th>
+                </tr>
+                <tr>
+                    <th colspan="4">Domain Specific Hazard</th>
+                    <th rowspan="2">Harm</th>
+                    <th rowspan="2">Device Context</th>
+                    <th rowspan="2">Event</th>
+                    <th rowspan="2">Hazardous Situation</th>
+                    <th colspan="2">Initial Risk Level</th>
+                </tr>
+                <tr>
+                    <th>Hazard</th>
+                    <th>Function</th>
+                    <th>Component</th>
+                    <th>Problem</th>
+                    <th>Prob.</th>
+                    <th>Sev.</th>
+                    <th>Prob.</th>
+                    <th>Sev.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 1) -->
+                <tr>
+                    <td rowspan="4" resource="controlledRisk1" typeof="riskman:ControlledRisk">
+                        (<span class="id" property="dc:identifier">cr</span>)
+                        <link property="riskman:hasAnalyzedRisk" href="analyzedRisk1" />
+                        <link property="riskman:isMitigatedBy" href="sda0" />
+                        <link property="riskman:hasResidualRiskLevel" href="residualRiskLevel1" />
+                    </td>
+                    <td colspan="10" resource="analyzedRisk1" typeof="riskman:AnalyzedRisk">
+                        (<span class="id" property="dc:identifier">ar</span>)
+                        <span property="rdfs:label">Loss of consciousness due to an alarm malfunction</span>
+                        <link property="riskman:hasDomainSpecificHazard" href="domainSpecificHazard1" />
+                        <link property="riskman:hasHarm" href="harm1" />
+                        <link property="riskman:hasDeviceContext" href="deviceContext1" />
+                        <link property="riskman:hasHazardousSituation" href="hazardousSituation1" />
+                        <link property="riskman:hasInitialRiskLevel" href="initialRiskLevel1" />
+                    </td>
+                    <td rowspan="1" colspan="4" resource="sda0" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd0</span>)
+                        <span property="rdfs:label">Alternative alerting when vibration mechanism of non-audio alarm
+                            fails.</span>
+                        <link property="riskman:hasSubSDA" href="sda1" />
+                        <link property="riskman:hasSubSDA" href="sda2" />
+                        <link property="riskman:hasSubSDA" href="sda3" />
+                    </td>
+                    <td rowspan="2" colspan="3" resource="residualRiskLevel1" typeof="riskman:RiskLevel">
+                        <span>Residual Risk Level 1</span>
+                        <link property="riskman:hasProbability" resource="rlevel:p1" />
+                        <link property="riskman:hasSeverity" resource="rlevel:s4" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" resource="domainSpecificHazard1" typeof="riskman:DomainSpecificHazard">
+                        (<span class="id" property="dc:identifier">dsh</span>)
+                        <span property="rdfs:label">Non-audio alarm malfunctions</span>
+                        <link property="riskman:hasHazard" href="hazard1" />
+                        <link property="riskman:hasDeviceFunction" href="deviceFunction1" />
+                        <link property="riskman:hasDeviceComponent" href="deviceComponent1" />
+                        <link property="riskman:hasDeviceProblem" href="deviceProblem1" />
+                    </td>
+                    <td rowspan="3" resource="harm1" typeof="riskman:Harm">
+                        (<span class="id" property="dc:identifier">hr</span>)
+                        <span property="rdfs:label">Loss of consciousness</span>
+                    </td>
+                    <td rowspan="3" resource="deviceContext1" typeof="riskman:DeviceContext">
+                        (<span class="id" property="dc:identifier">dcx</span>)
+                        <span property="rdfs:label">Normal use</span>
+                    </td>
+                    <td rowspan="1" resource="event1" typeof="riskman:Event">
+                        (<span class="id" property="dc:identifier">ev1</span>)
+                        <span property="rdfs:label">Vibration mechanism fails</span>
+                    </td>
+                    <td rowspan="3" resource="hazardousSituation1" typeof="riskman:HazardousSituation">
+                        (<span class="id" property="dc:identifier">hs</span>)
+                        <span property="rdfs:label">Underdose</span>
+                        <link property="riskman:hasPrecedingEvent" href="event2" />
+                    </td>
+                    <td colspan="2" resource="initialRiskLevel1" typeof="riskman:RiskLevel">
+                        Initial Risk Level 1
+                        <link property="riskman:hasProbability1" resource="rlevel:p5" />
+                        <link property="riskman:hasProbability2" resource="rlevel:p4" />
+                        <link property="riskman:hasProbability" resource="rlevel:p1" />
+                        <link property="riskman:hasSeverity" resource="rlevel:s4" />
+                    </td>
+                    <td resource="sda1" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd1</span>)
+                        <span property="rdfs:label">Additional visual (blinking) signal.</span>
+                        <link property="riskman:hasImplementationManifest" resource="im1" />
+                    </td>
+                    <td resource="sda2" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd2</span>)
+                        <span property="rdfs:label">Notification recurs every X minutes.</span>
+                        <link property="riskman:hasImplementationManifest" resource="im2" />
+                    </td>
+                    <td colspan="2" resource="sda3" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd3</span>)
+                        <span property="rdfs:label">Additional audio alarm.</span>
+                        <link property="riskman:hasSubSDA" href="sda4" />
+                        <link property="riskman:hasSubSDA" href="sda5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2" resource="hazard1" typeof="riskman:Hazard">
+                        (<span class="id" property="dc:identifier">hz</span>)
+                        <span property="rdfs:label">Non-audio alarm malfunctions</span>
+                    </td>
+                    <td rowspan="2" resource="deviceFunction1" typeof="riskman:DeviceFunction">
+                        (<span class="id" property="dc:identifier">df</span>)
+                        <span property="rdfs:label">Alarm</span>
+                    </td>
+                    <td rowspan="2" resource="deviceComponent1" typeof="riskman:DeviceComponent">
+                        (<span class="id" property="dc:identifier">dcm</span>)
+                        <span property="rdfs:label">Non-audio alarm</span>
+                    </td>
+                    <td rowspan="2" resource="deviceProblem1" typeof="riskman:DeviceProblem">
+                        (<span class="id" property="dc:identifier">dp</span>)
+                        <span property="rdfs:label">Defecitve Alarm (IMDRF A160106)</span>
+                    </td>
+                    <td rowspan="2" resource="event2" typeof="riskman:Event">
+                        (<span class="id" property="dc:identifier">ev2</span>)
+                        <span property="rdfs:label">Vibration cannot be felt</span>
+                        <link property="riskman:hasPrecedingEvent" href="event1" />
+                    </td>
+                    <td rowspan="2">
+                        <span resource="rlevel:p5" typeof="riskman:Probability">P1: 5</span>
+                        <br />
+                        <span resource="rlevel:p4" typeof="riskman:Probability">P2: 4</span>
+                        <br />
+                        <span resource="rlevel:p1" typeof="riskman:Probability">P: 1</span>
+                    </td>
+                    <td rowspan="2">
+                        <span resource="rlevel:s4" typeof="riskman:Severity">S: 4 </span>
+                    </td>
+                    <td rowspan="2" class="im" resource="im1" typeof="riskman:ImplementationManifest">
+                        (<span class="id" property="dc:identifier">im1</span>)
+                        <span property="rdfs:label">Sec. 10.3 of Alarm report.</span>
+                    </td>
+                    <td rowspan="2" class="im" resource="im2" typeof="riskman:ImplementationManifest">
+                        (<span class="id" property="dc:identifier">im2</span>)
+                        <span property="rdfs:label">Sec 10.7 of Alarm report.</span>
+                        <span property="schema:additionalProperty" typeof="bnode">
+                            (<span property="schema:name">X</span>=
+                            <span property="schema:value" datatype="xsd:float">0.5</span>)
+                        </span>
+                    </td>
+                    <td resource="sda4" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd4</span>)
+                        <span property="rdfs:label">Audio signal if vibration signal not acknowledged.</span>
+                        <link property="riskman:hasImplementationManifest" href="im3" />
+                    </td>
+                    <td resource="sda5" typeof="riskman:SDA">
+                        (<span class="id" property="dc:identifier">sd5</span>)
+                        <span property="rdfs:label">Audible signal is at least X db at Y m.</span>
+                        <link property="riskman:hasImplementationManifest" href="im4" />
+                        <span property="riskman:hasSafetyAssurance" typeof="riskman:SafetyAssurance">
+                            Safety assurance:
+                            <span property="rdfs:label">IEC 60601</span>
+                        </span>
+                    </td>
+                    <td rowspan="2" >
+                        <span resource="rlevel:p3" typeof="riskman:Probability">P: 1</span>
+                    </td>
+                    <td rowspan="2">
+                        <span resource="rlevel:s4" typeof="riskman:Severity">S: 4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="im" resource="im3" typeof="riskman:ImplementationManifest">
+                        (<span class="id" property="dc:identifier">im3</span>)
+                        <span property="rdfs:label">Sec. 10.11 of Alarm report.</span>
+                    </td>
+                    <td class="im" resource="im4" typeof="riskman:ImplementationManifest">
+                        (<span class="id" property="dc:identifier">im4</span>)
+                        <span property="rdfs:label">Sec. 5.3 of Loudspeaker test.</span>
+                        <span property="schema:additionalProperty" typeof="bnode">
+                            (<span property="schema:name">X</span>=
+                            <span property="schema:value" datatype="xsd:integer">45</span>
+                        </span>;
+                        <span property="schema:additionalProperty" typeof="bnode">
+                            <span property="schema:name">Y</span>=
+                            <span property="schema:value" datatype="xsd:integer">1</span>)
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
