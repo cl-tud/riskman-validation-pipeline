@@ -1,10 +1,9 @@
 # Riskman validation pipeline
 
-## Update 1.08.2024
 
 A Docker container is provided for easier setup of the pipeline.
 
-To build the container (provided that you have Docker installed), run:
+To build the container run:
 
 ```bash
 docker build -t riskman-pipeline .
@@ -79,254 +78,11 @@ Realizing finished in 00:00
       {
         "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
       }
-    ],
-    "http://www.w3.org/ns/shacl#resultPath": [
-      {
-        "@id": "_:N47d0cb4d5b534a63a08bd72fabbee3da"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultSeverity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceShape": [
-      {
-        "@id": "_:N49ab24535e8a4ffd9d6c17cbbeb9a281"
-      }
-    ]
-  },
-  {
-    "@id": "_:N47d0cb4d5b534a63a08bd72fabbee3da",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  },
-  {
-    "@id": "_:N49ab24535e8a4ffd9d6c17cbbeb9a281",
-    "http://www.w3.org/ns/shacl#message": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "_:N8b190aca7e5d43d7b1d52d92be33496a"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
-      {
-        "@id": "_:N88086c92dbd24422867baf7d3601835c"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8b190aca7e5d43d7b1d52d92be33496a",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  },
-  {
-    "@id": "_:N88086c92dbd24422867baf7d3601835c",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#SDAI"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7bb7842d5cd44b5daf8c208746efa895",
-    "@type": [
-      "http://www.w3.org/ns/shacl#ValidationResult"
-    ],
-    "http://www.w3.org/ns/shacl#focusNode": [
-      {
-        "@id": "http://example.org/sda1"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultMessage": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultPath": [
-      {
-        "@id": "_:N4c0449fed9d343858348b639fbb1737f"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultSeverity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceShape": [
-      {
-        "@id": "_:N198d7c79ba7149eaa69023f99c6266bf"
-      }
-    ]
-  },
-  {
-    "@id": "_:N198d7c79ba7149eaa69023f99c6266bf",
-    "http://www.w3.org/ns/shacl#message": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "_:Ne91ad26f2e2d4f639a89c79e43b2d6f6"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
-      {
-        "@id": "_:N113d5e56ade9484c80ed1025f7032398"
-      }
-    ]
-  },
-  {
-    "@id": "_:N113d5e56ade9484c80ed1025f7032398",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#SDAI"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne91ad26f2e2d4f639a89c79e43b2d6f6",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4c0449fed9d343858348b639fbb1737f",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  },
-  {
-    "@id": "_:N62604cc9062744f09b2b92b6b1129405",
-    "@type": [
-      "http://www.w3.org/ns/shacl#ValidationResult"
-    ],
-    "http://www.w3.org/ns/shacl#focusNode": [
-      {
-        "@id": "http://example.org/sda2"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultMessage": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultPath": [
-      {
-        "@id": "_:N0598cbc314ea4dcaa75db7083e8201f3"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#resultSeverity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceConstraintComponent": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#sourceShape": [
-      {
-        "@id": "_:N3941807ff377449d948ba5e350527c87"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3941807ff377449d948ba5e350527c87",
-    "http://www.w3.org/ns/shacl#message": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "_:N488a003469b5403ea7c821275bb88c2b"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedMinCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#qualifiedValueShape": [
-      {
-        "@id": "_:N2edcd245458e44a9aca2cdbe1d409fc2"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2edcd245458e44a9aca2cdbe1d409fc2",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#SDAI"
-      }
-    ]
-  },
-  {
-    "@id": "_:N488a003469b5403ea7c821275bb88c2b",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0598cbc314ea4dcaa75db7083e8201f3",
-    "http://www.w3.org/ns/shacl#zeroOrMorePath": [
-      {
-        "@id": "https://w3id.org/riskman/ontology#hasSubSDA"
-      }
-    ]
-  }
-]
-```
-
-The error messages are e.g.:
-```
-"http://www.w3.org/ns/shacl#message": [
-      {
-        "@value": "Every SDA needs a final mitigation (which has the Implementation Manifest)"
-      }
-]
+    ...
 ```
 
 
+<!-- 
 2) submission mode: RDF abox - submitted files are directly RDF ABoxes (like [/test-cases/missing-im.ttl](/test-cases/1missing-im.ttl))
 
 ```bash
@@ -343,6 +99,23 @@ docker run \
       -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/ontology.ttl:/app/input/ontology.ttl            \
       -v /home/piotr/Dresden/kimeds/riskman-reasoning-pipeline/riskman-validation-pipeline/shapes.ttl:/app/input/shapes.ttl                \
       -t riskman-pipeline:latest -p 5 -s 5 -m abox
+``` -->
+
+### Reasoner-only mode (without validation)
+
+If you want to get the inferred RDF output from the reasoner **without** running SHACL validation, use the reasoner-only Docker container:
+
+**Build the reasoner-only container:**
+```bash
+docker build -t riskman-pipeline:reasoner -f Dockerfile.reasoner .
+```
+
+**Run with HTML submission:**
+```bash
+docker run \
+      -v <ABSOLUTE HTML FILE PATH>:/app/input/submission.html \
+      -v <ABSOLUTE ONTOLOGY FILE PATH>:/app/input/ontology.ttl \
+      -t riskman-pipeline:reasoner -p <NUMBER PROB. CLASSES> -s <NUMBER SEV. CLASSES> -m html
 ```
 
 ### Output format
@@ -378,16 +151,15 @@ ___
 
 
 ```bash
-# Create virtual environment named 'kimeds'
-# IMPORTANT: make sure the python version is 3.11
-python -m venv kimeds_env
-
+# Create virtual environment named 'kimeds_env'
+# IMPORTANT: Requires Python 3.11
+python3.11 -m venv kimeds_env
 
 # Activate the virtual environment (for macOS/Linux)
 source kimeds_env/bin/activate
 
 # Activate the virtual environment (for Windows)
-# riskman\Scripts\activate
+# kimeds_env\Scripts\activate
 
 # Update pip
 pip install --upgrade pip

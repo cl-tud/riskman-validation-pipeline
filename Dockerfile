@@ -12,8 +12,7 @@ RUN apt-get --yes update && \
     apt-get --yes install software-properties-common wget tar && \
     apt-add-repository --yes ppa:deadsnakes/ppa && \
     apt-get --yes update && \
-    apt-get --yes install python3.11 && \
-    apt-get --yes install python3.11-venv
+    apt-get --yes install python3.11 python3.11-venv python3.11-dev python3-pip
 
 
 # Download and install OpenJDK 18
@@ -33,10 +32,9 @@ WORKDIR /app
 COPY . .
 
 # create python environment, install libraries
-RUN python3.11 -m venv kimeds_env && \ 
-    source kimeds_env/bin/activate && \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt
+RUN python3.11 -m venv kimeds_env && \
+    kimeds_env/bin/python -m pip install --upgrade pip && \
+    kimeds_env/bin/python -m pip install -r requirements.txt
 
 # download the ontology and shapes
 RUN rm -rf input && \

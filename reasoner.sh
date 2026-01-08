@@ -1,7 +1,8 @@
 #!/bin/bash
 
 tmp_file="rdf.ttl"
-jar_location="bin/owl-cli-snapshot.jar"
+output_file="output.ttl"
+jar_location="bin/realization-wrapper-hermit-jfact-1.1.jar"
 
 # get the data from stdin
 input=$(cat)
@@ -9,11 +10,11 @@ input=$(cat)
 # save the data to a temp. file
 echo "$input" > "$tmp_file"
 
-# run the reasoner
-output="$(java -jar $jar_location infer $tmp_file)"
+# run the reasoner with hermit option, redirect stdout to stderr
+java -jar $jar_location $tmp_file $output_file hermit >&2
 
-# print the output, remove the 1st line about debugging
-echo -e "$output" | tail -n +2
+# print the output
+cat $output_file
 
-rm "$tmp_file"
+rm "$tmp_file" "$output_file"
 
