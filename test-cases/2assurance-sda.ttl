@@ -162,15 +162,15 @@ ex:hazard99 a riskman:Hazard ;
 
 ex:hazardousSituation1 a riskman:HazardousSituation ;
     rdfs:label "Development of gas embolism" ;
-    riskman:hasPrecedingEvent ex:event1 .
+    riskman:hasEvent ex:event1 .
 
 ex:hazardousSituation2 a riskman:HazardousSituation ;
     rdfs:label "Line voltage appears on electrodes" ;
-    riskman:hasPrecedingEvent ex:event2 .
+    riskman:hasEvent ex:event2 .
 
 ex:hazardousSituation99 a riskman:HazardousSituation ;
     rdfs:label "Cannot deliver shock when an arrythmia occurs" ;
-    riskman:hasPrecedingEvent ex:event99 .
+    riskman:hasEvent ex:event99 .
 
 # initial risk levels
 
